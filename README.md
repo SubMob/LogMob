@@ -12,15 +12,38 @@ Too install the library please add
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
+
+            // if you want to add Crashlytics
+            // maven { url 'https://maven.fabric.io/public' }
 		}
+
+        // if you want to add Crashlytics
+        // dependencies {
+        //     classpath "com.google.gms:google-services:$GSM_GOOGLE_VERSION"
+        //     classpath "io.fabric.tools:gradle:$FABRIC_VERSION"
+        // }
 	}
 ```
 to build.gradle (project)
 
 and
 ```gradle
+    // if you want to add Crashlytics
+    // apply plugin: 'com.google.gms.google-services'
+    // apply plugin: 'io.fabric'
+
 	dependencies {
 	        implementation 'com.github.SUB-MOB:logmob:VERSION_NUMBER'
 	}
 ```
 to build.gradle (app)
+
+## Enable
+
+```kotlin
+// Without Crashlytics
+initLogMob(this)
+
+// With Crashlytics
+initLogMob(this, true)
+```

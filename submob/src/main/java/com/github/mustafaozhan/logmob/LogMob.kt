@@ -9,7 +9,7 @@ import io.fabric.sdk.android.Fabric
 import mustafaozhan.github.com.logmob.BuildConfig
 import timber.log.Timber
 
-fun initLogMob(context: Context) {
+fun initLogMob(context: Context, enableCrashlytics: Boolean = false) {
     Fabric.with(
         context,
         Crashlytics.Builder()
@@ -17,7 +17,13 @@ fun initLogMob(context: Context) {
             .build()
     )
 
-    Timber.plant(if (BuildConfig.DEBUG) CCCDebugTree(context) else CrashlyticsTree())
+    if (BuildConfig.DEBUG) {
+        Timber.plant(CCCDebugTree(context))
+    } else {
+        if (enableCrashlytics) {
+            Timber.plant(CrashlyticsTree())
+        }
+    }
 
     Thread.setDefaultUncaughtExceptionHandler(WatchDogHandler())
 }
