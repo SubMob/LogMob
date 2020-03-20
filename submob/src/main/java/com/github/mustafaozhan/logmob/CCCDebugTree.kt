@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.logmob
+package com.github.mustafaozhan.logmob
 
 import android.content.Context
 import android.util.Log
@@ -8,7 +8,8 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.PrintWriter
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 @Suppress("LogNotTimber", "TooGenericExceptionCaught")
 class CCCDebugTree(context: Context) : Timber.DebugTree() {

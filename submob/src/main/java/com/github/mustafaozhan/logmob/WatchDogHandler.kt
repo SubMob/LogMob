@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.logmob
+package com.github.mustafaozhan.logmob
 
 import com.github.anrwatchdog.ANRWatchDog
 import timber.log.Timber

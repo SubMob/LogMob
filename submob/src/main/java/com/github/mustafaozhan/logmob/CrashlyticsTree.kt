@@ -1,4 +1,4 @@
-package mustafaozhan.github.com.logmob
+package com.github.mustafaozhan.logmob
 
 import android.util.Log
 import com.crashlytics.android.Crashlytics

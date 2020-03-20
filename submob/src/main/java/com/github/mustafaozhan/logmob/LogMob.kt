@@ -1,11 +1,12 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "TooManyFunctions")
 
-package mustafaozhan.github.com.logmob
+package com.github.mustafaozhan.logmob
 
 import android.content.Context
 import com.crashlytics.android.Crashlytics
 import com.crashlytics.android.core.CrashlyticsCore
 import io.fabric.sdk.android.Fabric
+import mustafaozhan.github.com.logmob.BuildConfig
 import timber.log.Timber
 
 fun initLogMob(context: Context) {
