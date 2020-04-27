@@ -32,6 +32,7 @@ dependencies {
     implementation(
             kotlin,
             androidCrashlytics,
+            firebaseCore,
             timber,
             anrWatchDog,
     )
