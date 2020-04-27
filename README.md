@@ -47,3 +47,6 @@ initLogMob(this)
 // With Crashlytics
 initLogMob(this, true)
 ```
+
+### License
+Copyright (c) 2020 Mustafa Ozhan. All rights reserved.

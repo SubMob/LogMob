@@ -1,3 +1,4 @@
+// Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
 @file:Suppress("unused", "TooManyFunctions")
 
 package com.github.mustafaozhan.logmob
