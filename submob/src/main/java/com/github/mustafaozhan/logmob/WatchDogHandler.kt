@@ -7,11 +7,15 @@ import com.github.anrwatchdog.ANRWatchDog
 import timber.log.Timber
 
 class WatchDogHandler : Thread.UncaughtExceptionHandler {
+    companion object {
+        private const val TIME_OUT = 7500
+    }
+
     private val chainedHandler: Thread.UncaughtExceptionHandler? =
         Thread.getDefaultUncaughtExceptionHandler()
 
     init {
-        ANRWatchDog()
+        ANRWatchDog(TIME_OUT)
             .setReportMainThreadOnly()
             .setANRListener { error -> Timber.e(error, "ANR DETECTED") }.start()
     }
