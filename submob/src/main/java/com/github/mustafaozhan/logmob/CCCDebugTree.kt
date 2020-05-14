@@ -14,12 +14,11 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-@Suppress("LogNotTimber", "TooGenericExceptionCaught")
+@Suppress("TooGenericExceptionCaught")
 class CCCDebugTree(context: Context) : Timber.DebugTree() {
 
     companion object {
         private const val MAX_FILE_SIZE = (10 * 1024 * 1024).toLong() // 10 MB
-        private const val TAG = "CCCDebugTree"
         private const val DATE_FORMAT = "HH:mm:ss MM.dd.yyyy"
     }
 
@@ -33,7 +32,7 @@ class CCCDebugTree(context: Context) : Timber.DebugTree() {
 
         val directory = File(directoryPath)
         if (!directory.exists() && !directory.mkdirs()) {
-            Log.e(TAG, "Failed to create LOG file directory")
+            Timber.e("Failed to create LOG file directory")
         }
 
         Timber.plant(this)
@@ -66,7 +65,7 @@ class CCCDebugTree(context: Context) : Timber.DebugTree() {
                 outputStream.printf("Caused by: %s\n", Log.getStackTraceString(throwable))
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to write to LOG file", e)
+            Timber.e(e, "Failed to write to LOG file")
         } finally {
             outputStream?.close()
         }
@@ -87,7 +86,7 @@ class CCCDebugTree(context: Context) : Timber.DebugTree() {
         try {
             copyFile(currentFile, lastFile, true)
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to copy log file", e)
+            Timber.e(e, "Failed to copy log file")
         }
     }
 
@@ -102,13 +101,13 @@ class CCCDebugTree(context: Context) : Timber.DebugTree() {
         inStream.close()
         outStream.close()
 
-        Log.d(TAG, "Data copied from $src to $dst")
+        Timber.d("Data copied from $src to $dst")
 
         if (deleteSource) {
             if (src.delete()) {
-                Log.d(TAG, "Source file deleted")
+                Timber.d("Source file deleted")
             } else {
-                Log.e(TAG, "Failed to delete source file!")
+                Timber.e("Failed to delete source file!")
             }
         }
     }
