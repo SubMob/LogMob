@@ -14,13 +14,13 @@ Too install the library please add
 			maven { url 'https://jitpack.io' }
 
             // if you want to add Crashlytics
-            // maven { url 'https://maven.fabric.io/public' }
+            google()
 		}
 
         // if you want to add Crashlytics
         // dependencies {
         //     classpath "com.google.gms:google-services:$GSM_GOOGLE_VERSION"
-        //     classpath "io.fabric.tools:gradle:$FABRIC_VERSION"
+        //     classpath 'com.google.firebase:firebase-crashlytics-gradle:$CRASHLYTICS_VERSION'
         // }
 	}
 ```
@@ -30,7 +30,7 @@ and
 ```gradle
     // if you want to add Crashlytics
     // apply plugin: 'com.google.gms.google-services'
-    // apply plugin: 'io.fabric'
+    // apply plugin: 'com.google.firebase.crashlytics'
 
 	dependencies {
 	        implementation 'com.github.SUB-MOB:logmob:VERSION_NUMBER'
