@@ -4,10 +4,8 @@
 package com.github.mustafaozhan.logmob
 
 import android.content.Context
-import com.crashlytics.android.Crashlytics
-import com.crashlytics.android.core.CrashlyticsCore
 import com.google.firebase.analytics.FirebaseAnalytics
-import io.fabric.sdk.android.Fabric
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import mustafaozhan.github.com.logmob.BuildConfig
 import timber.log.Timber
 
@@ -21,12 +19,9 @@ fun initLogMob(
         FirebaseAnalytics.getInstance(context)
     }
 
-    Fabric.with(
-        context,
-        Crashlytics.Builder()
-            .core(CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
-            .build()
-    )
+    FirebaseCrashlytics
+        .getInstance()
+        .setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
 
     if (BuildConfig.DEBUG) {
         Timber.plant(CCCDebugTree(context))

@@ -4,7 +4,7 @@
 package com.github.mustafaozhan.logmob
 
 import android.util.Log
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import timber.log.Timber
 
 class CrashlyticsTree : Timber.Tree() {
@@ -19,9 +19,11 @@ class CrashlyticsTree : Timber.Tree() {
             return
         }
 
-        Crashlytics.setInt(CRASHLYTICS_KEY_PRIORITY, priority)
-        Crashlytics.setString(CRASHLYTICS_KEY_TAG, tag)
-        Crashlytics.setString(CRASHLYTICS_KEY_MESSAGE, "\n$message")
-        Crashlytics.logException(throwable ?: Exception(message))
+        FirebaseCrashlytics.getInstance().apply {
+            setCustomKey(CRASHLYTICS_KEY_PRIORITY, priority)
+            setCustomKey(CRASHLYTICS_KEY_TAG, tag.toString())
+            setCustomKey(CRASHLYTICS_KEY_MESSAGE, "\n$message")
+            recordException(throwable ?: Exception(message))
+        }
     }
 }
