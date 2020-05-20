@@ -1,7 +1,7 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.logmob
+package com.github.mustafaozhan.logmob.handler
 
 import com.github.anrwatchdog.ANRWatchDog
 import timber.log.Timber

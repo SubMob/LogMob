@@ -1,7 +1,7 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.logmob
+package com.github.mustafaozhan.logmob.tree
 
 import android.content.Context
 import android.util.Log

@@ -1,9 +1,11 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.logmob
+package com.github.mustafaozhan.logmob.tree
 
 import android.util.Log
+import com.github.mustafaozhan.logmob.model.LogType
+import com.github.mustafaozhan.logmob.model.NonThrowableException
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import timber.log.Timber
 
