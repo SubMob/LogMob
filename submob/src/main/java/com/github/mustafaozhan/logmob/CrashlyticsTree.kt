@@ -20,7 +20,11 @@ class CrashlyticsTree : Timber.Tree() {
         }
 
         FirebaseCrashlytics.getInstance().apply {
-            setCustomKey(CRASHLYTICS_KEY_PRIORITY, priority)
+            LogType.values()
+                .firstOrNull { it.typeID == priority }
+                ?.typeName?.let {
+                    setCustomKey(CRASHLYTICS_KEY_PRIORITY, it)
+                }
             tag?.let { setCustomKey(CRASHLYTICS_KEY_TAG, it) }
             setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
             recordException(throwable ?: NonThrowableException(message))
