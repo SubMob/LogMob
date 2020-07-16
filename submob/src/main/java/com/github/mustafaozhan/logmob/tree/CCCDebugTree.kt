@@ -5,6 +5,7 @@ package com.github.mustafaozhan.logmob.tree
 
 import android.content.Context
 import android.util.Log
+import com.github.mustafaozhan.logmob.model.LogType
 import timber.log.Timber
 import java.io.File
 import java.io.FileInputStream
@@ -112,13 +113,7 @@ class CCCDebugTree(context: Context) : Timber.DebugTree() {
         }
     }
 
-    private fun priorityToLevel(priority: Int) = when (priority) {
-        Log.VERBOSE -> "V"
-        Log.DEBUG -> "D"
-        Log.INFO -> "I"
-        Log.WARN -> "W"
-        Log.ERROR -> "E"
-        Log.ASSERT -> "A"
-        else -> "?"
-    }
+    private fun priorityToLevel(priority: Int) = LogType.values()
+        .firstOrNull { it.typeID == priority }
+        ?.typeName ?: "UNKNOWN"
 }
