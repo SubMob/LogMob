@@ -8,7 +8,7 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 object Versions {
-    const val kotlinVersion = "1.3.72"
+    const val kotlinVersion = "1.4.0"
     const val androidPluginVersion = "4.0.1"
     const val firebaseCoreVersion = "17.4.4"
     const val firebaseCrashlyticsVersion = "17.1.1"
@@ -27,6 +27,12 @@ object Dependencies {
 object Classpaths {
     const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPluginVersion}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+}
+
+object Plugins {
+    const val library = "com.android.library"
+    const val android = "android"
+    const val kapt = "kapt"
 }
 
 object ProjectSettings {
