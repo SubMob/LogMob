@@ -3,7 +3,6 @@
  */
 
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     with(Plugins) {
@@ -66,6 +65,22 @@ kotlin {
     }
 }
 
+android {
+    with(ProjectSettings) {
+        compileSdkVersion(projectCompileSdkVersion)
+
+        defaultConfig {
+            minSdkVersion(projectMinSdkVersion)
+            targetSdkVersion(projectTargetSdkVersion)
+
+            versionCode = getVersionCode(project)
+            versionName = getVersionName(project)
+        }
+
+        sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    }
+}
+
 val packForXcode by tasks.creating(Sync::class) {
     group = "build"
     val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
@@ -81,29 +96,3 @@ val packForXcode by tasks.creating(Sync::class) {
 }
 
 tasks.getByName("build").dependsOn(packForXcode)
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-
-android {
-    with(ProjectSettings) {
-        compileSdkVersion(projectCompileSdkVersion)
-
-        defaultConfig {
-            minSdkVersion(projectMinSdkVersion)
-            targetSdkVersion(projectTargetSdkVersion)
-
-            versionCode = getVersionCode(project)
-            versionName = getVersionName(project)
-        }
-
-        sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-}
