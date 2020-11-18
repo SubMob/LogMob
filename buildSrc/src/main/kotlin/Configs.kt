@@ -8,36 +8,42 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 object Versions {
-    const val kotlinVersion = "1.4.0"
-    const val androidPluginVersion = "4.0.1"
-    const val firebaseCoreVersion = "17.4.4"
-    const val firebaseCrashlyticsVersion = "17.1.1"
-    const val anrWatchDogVersion = "1.4.0"
-    const val timberVersion = "4.7.1"
+    const val kotlin = "1.4.20-RC"
+    const val androidPlugin = "4.2.0-alpha16"
+    const val firebaseCore = "18.0.0"
+    const val firebaseCrashlytics = "17.3.0"
+    const val anrWatchDog = "1.4.0"
+    const val kermit = "0.1.8"
 }
 
 object Dependencies {
-    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlinVersion}"
-    const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics:${Versions.firebaseCrashlyticsVersion}"
-    const val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCoreVersion}"
-    const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
-    const val anrWatchDog = "com.github.anrwatchdog:anrwatchdog:${Versions.anrWatchDogVersion}"
+    object Android {
+        const val firebaseCrashlytics =
+            "com.google.firebase:firebase-crashlytics:${Versions.firebaseCrashlytics}"
+        const val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCore}"
+        const val anrWatchDog = "com.github.anrwatchdog:anrwatchdog:${Versions.anrWatchDog}"
+    }
+
+    object Common {
+        const val kermit = "co.touchlab:kermit:${Versions.kermit}"
+    }
 }
 
 object Classpaths {
-    const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPluginVersion}"
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+    const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPlugin}"
+    const val kotlinGradlePlugin =
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 }
 
 object Plugins {
-    const val library = "com.android.library"
-    const val android = "android"
+    const val androidLibrary = "com.android.library"
+    const val multiplatform = "multiplatform"
     const val kapt = "kapt"
 }
 
 object ProjectSettings {
-    private const val projectMayorVersion = 2
-    private const val projectMinorVersion = 0
+    private const val mayorVersion = 2
+    private const val minorVersion = 0
 
     const val projectCompileSdkVersion = 29
     const val projectMinSdkVersion = 21
@@ -48,7 +54,7 @@ object ProjectSettings {
     }
 
     fun getVersionName(project: Project) =
-        "$projectMayorVersion.$projectMinorVersion.${gitCommitCount(project)}"
+        "$mayorVersion.$minorVersion.${gitCommitCount(project)}"
 
     private fun gitCommitCount(project: Project) =
         "git rev-list --first-parent --count origin/master"
