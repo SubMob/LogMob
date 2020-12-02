@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object Versions {
     const val kotlin = "1.4.20"
-    const val androidPlugin = "4.2.0-beta01"
+    const val androidPlugin = "7.0.0-alpha01"
     const val firebaseCore = "18.0.0"
     const val firebaseCrashlytics = "17.3.0"
     const val anrWatchDog = "1.4.0"
