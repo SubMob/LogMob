@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
+ * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
 @file:Suppress("SpellCheckingInspection")
 
@@ -8,7 +8,7 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 object Versions {
-    const val kotlin = "1.4.20"
+    const val kotlin = "1.4.21"
     const val androidPlugin = "7.0.0-alpha02"
     const val firebaseCore = "18.0.0"
     const val firebaseCrashlytics = "17.3.0"
