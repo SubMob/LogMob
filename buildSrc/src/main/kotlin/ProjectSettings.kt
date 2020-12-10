@@ -1,45 +1,10 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-@file:Suppress("SpellCheckingInspection")
 
 import org.gradle.api.Project
 import java.io.File
 import java.util.concurrent.TimeUnit
-
-object Versions {
-    const val kotlin = "1.4.21"
-    const val androidPlugin = "7.0.0-alpha02"
-    const val firebaseCore = "18.0.0"
-    const val firebaseCrashlytics = "17.3.0"
-    const val anrWatchDog = "1.4.0"
-    const val kermit = "0.1.8"
-}
-
-object Dependencies {
-    object Android {
-        const val firebaseCrashlytics =
-            "com.google.firebase:firebase-crashlytics:${Versions.firebaseCrashlytics}"
-        const val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCore}"
-        const val anrWatchDog = "com.github.anrwatchdog:anrwatchdog:${Versions.anrWatchDog}"
-    }
-
-    object Common {
-        const val kermit = "co.touchlab:kermit:${Versions.kermit}"
-    }
-}
-
-object Classpaths {
-    const val androidBuildTools = "com.android.tools.build:gradle:${Versions.androidPlugin}"
-    const val kotlinGradlePlugin =
-        "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-}
-
-object Plugins {
-    const val androidLibrary = "com.android.library"
-    const val multiplatform = "multiplatform"
-    const val kapt = "kapt"
-}
 
 object ProjectSettings {
     private const val mayorVersion = 2
