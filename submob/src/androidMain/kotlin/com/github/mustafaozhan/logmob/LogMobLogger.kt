@@ -4,7 +4,7 @@
 
 package com.github.mustafaozhan.logmob
 
-import co.touchlab.kermit.CommonLogger
+import co.touchlab.kermit.LogcatLogger
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.Severity
 import com.github.mustafaozhan.logmob.error.NonThrowableException
@@ -13,8 +13,7 @@ import mustafaozhan.github.com.logmob.BuildConfig
 
 @Suppress("unused")
 actual class LogMobLogger : Logger() {
-    // todo need to replace with LogcatLogger after https://github.com/touchlab/Kermit/issues/67 resolved
-    private val logger = CommonLogger()
+    private val logger = LogcatLogger()
 
     companion object {
         private const val CRASHLYTICS_KEY_PRIORITY = "priority"
