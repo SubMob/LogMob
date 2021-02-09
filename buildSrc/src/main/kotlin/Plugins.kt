@@ -5,5 +5,4 @@
 object Plugins {
     const val androidLibrary = "com.android.library"
     const val multiplatform = "multiplatform"
-    const val kapt = "kapt"
 }

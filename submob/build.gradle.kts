@@ -6,7 +6,6 @@ plugins {
     with(Plugins) {
         kotlin(multiplatform)
         id(androidLibrary)
-        kotlin(kapt)
     }
 }
 
