@@ -1,5 +1,17 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-rootProject.name = "logmob"
-include(":submob")
+
+enableFeaturePreview("GRADLE_METADATA")
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "log-mob"
+include(":logmob")

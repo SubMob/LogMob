@@ -4,8 +4,10 @@
 
 plugins {
     with(Plugins) {
-        kotlin(multiplatform)
         id(androidLibrary)
+        kotlin(multiplatform)
+        `maven-publish`
+        signing
     }
 }
 
@@ -13,7 +15,9 @@ kotlin {
 
     jvm()
 
-    android()
+    android {
+        publishLibraryVariants("release", "debug")
+    }
 
     ios {
         binaries {
