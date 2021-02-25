@@ -96,12 +96,10 @@ val isReleaseBuild: Boolean
 
 object Library {
     const val libraryGroup = "com.github.sub-mob"
-    const val libraryVersion = "2.0.0"
+    const val libraryVersion = "2.0.1"
 
-    const val publishPlugin = "maven-publish"
-
-    const val libraryUrl = "https://github.com/SUB-MOB/logmob"
-    const val libraryName = "Log Mob"
+    const val libraryUrl = "https://github.com/SubMob/LogMob"
+    const val libraryName = "LogMob"
     const val libraryDescription = "Mutliplatform logging library"
 
     const val developerName = "Mustafa Ozhan"

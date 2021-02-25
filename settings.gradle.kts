@@ -4,14 +4,5 @@
 
 enableFeaturePreview("GRADLE_METADATA")
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        jcenter()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "log-mob"
+rootProject.name = "LogMob"
 include(":logmob")
