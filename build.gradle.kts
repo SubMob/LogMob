@@ -8,7 +8,7 @@ plugins {
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         with(ClassPaths) {
@@ -28,7 +28,6 @@ allprojects {
         repositories {
             google()
             mavenCentral()
-            jcenter()
         }
 
         val emptyJavadocJar by tasks.registering(Jar::class) {
@@ -96,7 +95,7 @@ val isReleaseBuild: Boolean
 
 object Library {
     const val libraryGroup = "com.github.submob"
-    const val libraryVersion = "2.0.0"
+    const val libraryVersion = "2.0.1"
 
     const val libraryUrl = "https://github.com/SubMob/LogMob"
     const val libraryName = "LogMob"
