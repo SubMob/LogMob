@@ -10,7 +10,7 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import mustafaozhan.github.com.logmob.BuildConfig
 
-fun initLogMob(
+fun initCrashlytics(
     context: Context,
     enableAnalytics: Boolean = false
 ) {

@@ -40,7 +40,7 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                implementation(Dependencies.Common.kermit)
+                api(Dependencies.Common.kermit)
             }
         }
         val commonTest by getting
