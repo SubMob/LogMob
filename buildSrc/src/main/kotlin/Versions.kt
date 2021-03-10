@@ -4,7 +4,7 @@
 
 object Versions {
     const val kotlin = "1.4.31"
-    const val androidPlugin = "7.0.0-alpha08"
+    const val androidPlugin = "7.0.0-alpha09"
     const val firebaseCore = "18.0.2"
     const val firebaseCrashlytics = "17.3.1"
     const val anrWatchDog = "1.4.0"
