@@ -3,13 +3,10 @@
  */
 package com.github.mustafaozhan.logmob.handler
 
-import co.touchlab.kermit.Kermit
 import com.github.anrwatchdog.ANRWatchDog
-import com.github.mustafaozhan.logmob.LogMobLogger
+import com.github.mustafaozhan.logmob.kermit
 
 class WatchDogHandler : Thread.UncaughtExceptionHandler {
-    private val kermit = Kermit(LogMobLogger())
-
     companion object {
         private const val TIME_OUT = 7500
     }
