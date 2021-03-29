@@ -3,7 +3,7 @@
  */
 
 object Versions {
-    const val kotlin = "1.5.0-M1"
+    const val kotlin = "1.5.0-M2"
     const val androidPlugin = "7.0.0-alpha12"
     const val firebaseCore = "18.0.2"
     const val firebaseCrashlytics = "17.4.1"
