@@ -18,7 +18,12 @@ kotlin {
     android {
         publishLibraryVariants("release", "debug")
     }
-
+    // todo https://youtrack.jetbrains.com/issue/KT-43944
+    configurations {
+        create("testApi") {}
+        create("testDebugApi") {}
+        create("testReleaseApi") {}
+    }
     // todo Revert to just ios() when gradle plugin can properly resolve it
     if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true) {
         iosArm64("ios")
