@@ -15,12 +15,6 @@ import mustafaozhan.github.com.logmob.BuildConfig
 actual class LogMobLogger : Logger() {
     private val logger = LogcatLogger()
 
-    companion object {
-        private const val CRASHLYTICS_KEY_PRIORITY = "priority"
-        private const val CRASHLYTICS_KEY_TAG = "tag"
-        private const val CRASHLYTICS_KEY_MESSAGE = "message"
-    }
-
     override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
         if (BuildConfig.DEBUG) {
             logger.log(
@@ -43,5 +37,11 @@ actual class LogMobLogger : Logger() {
                 recordException(throwable ?: NonThrowableException(message))
             }
         }
+    }
+
+    companion object {
+        private const val CRASHLYTICS_KEY_PRIORITY = "priority"
+        private const val CRASHLYTICS_KEY_TAG = "tag"
+        private const val CRASHLYTICS_KEY_MESSAGE = "message"
     }
 }

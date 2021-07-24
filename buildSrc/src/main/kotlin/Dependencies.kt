@@ -5,13 +5,13 @@
 @Suppress("SpellCheckingInspection")
 object Dependencies {
     object Android {
-        const val firebaseCrashlytics =
-            "com.google.firebase:firebase-crashlytics:${Versions.firebaseCrashlytics}"
-        const val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCore}"
-        const val anrWatchDog = "com.github.anrwatchdog:anrwatchdog:${Versions.anrWatchDog}"
+        const val FIREBASE_CRASHLYTICS =
+            "com.google.firebase:firebase-crashlytics:${Versions.FIREBASE_CRASHLYTICS}"
+        const val FIREBASE_CORE = "com.google.firebase:firebase-core:${Versions.FIREBASE_CORE}"
+        const val ANR_WATCH_DOG = "com.github.anrwatchdog:anrwatchdog:${Versions.ANR_WATCH_DOG}"
     }
 
     object Common {
-        const val kermit = "co.touchlab:kermit:${Versions.kermit}"
+        const val KERMIT = "co.touchlab:kermit:${Versions.KERMIT}"
     }
 }

@@ -3,10 +3,10 @@
  */
 
 object Versions {
-    const val kotlin = "1.5.21"
-    const val androidPlugin = "7.1.0-alpha03"
-    const val firebaseCore = "19.0.0"
-    const val firebaseCrashlytics = "18.1.0"
-    const val anrWatchDog = "1.4.0"
-    const val kermit = "0.1.9"
+    const val KOTLIN = "1.5.21"
+    const val ANDROID_GRADLE_PLUGIN = "7.1.0-alpha04"
+    const val FIREBASE_CORE = "19.0.0"
+    const val FIREBASE_CRASHLYTICS = "18.2.0"
+    const val ANR_WATCH_DOG = "1.4.0"
+    const val KERMIT = "0.1.9"
 }

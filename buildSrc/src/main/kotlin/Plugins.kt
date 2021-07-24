@@ -3,6 +3,6 @@
  */
 
 object Plugins {
-    const val androidLibrary = "com.android.library"
-    const val multiplatform = "multiplatform"
+    const val ANDROID_LIBRARY = "com.android.library"
+    const val MULTIPLATFORM = "multiplatform"
 }

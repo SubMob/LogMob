@@ -4,8 +4,8 @@
 
 plugins {
     with(Plugins) {
-        id(androidLibrary)
-        kotlin(multiplatform)
+        id(ANDROID_LIBRARY)
+        kotlin(MULTIPLATFORM)
         `maven-publish`
         signing
     }
@@ -40,7 +40,7 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                api(Dependencies.Common.kermit)
+                api(Dependencies.Common.KERMIT)
             }
         }
         val commonTest by getting
@@ -48,9 +48,9 @@ kotlin {
         with(Dependencies.Android) {
             val androidMain by getting {
                 dependencies {
-                    implementation(firebaseCrashlytics)
-                    implementation(firebaseCore)
-                    implementation(anrWatchDog)
+                    implementation(FIREBASE_CRASHLYTICS)
+                    implementation(FIREBASE_CORE)
+                    implementation(ANR_WATCH_DOG)
                 }
             }
             val androidTest by getting
@@ -67,11 +67,11 @@ kotlin {
 
 android {
     with(ProjectSettings) {
-        compileSdk = compileSdkVersion
+        compileSdk = COMPILE_SDK_VERSION
 
         defaultConfig {
-            minSdk = minSdkVersion
-            targetSdk = targetSdkVersion
+            minSdk = MIN_SDK_VERSION
+            targetSdk = TARGET_SDK_VERSION
         }
 
         sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
