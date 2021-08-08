@@ -4,7 +4,7 @@
 
 plugins {
     with(Plugins) {
-        id(ANDROID_LIBRARY)
+        id(ANDROID_LIB)
         kotlin(MULTIPLATFORM)
         `maven-publish`
         signing

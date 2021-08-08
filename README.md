@@ -5,7 +5,7 @@
 ![badge][badge-js]
 ![badge][badge-jvm]
 
-[![master](https://github.com/SubMob/LogMob/actions/workflows/master.yml/badge.svg)](https://github.com/SubMob/LogMob/actions/workflows/master.yml)
+[![LogMob CI](https://github.com/SubMob/LogMob/actions/workflows/main.yml/badge.svg)](https://github.com/SubMob/LogMob/actions/workflows/main.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.submob/logmob/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.submob/logmob)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/114b2f31e5c9420b8fe1683cfc290f33)](https://www.codacy.com/gh/SubMob/LogMob?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SubMob/LogMob&amp;utm_campaign=Badge_Grade)
 

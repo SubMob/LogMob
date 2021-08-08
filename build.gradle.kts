@@ -23,7 +23,7 @@ allprojects {
     with(Library) {
 
         group = GROUP
-        version = VERSION
+        version = ProjectSettings.getVersionName(project)
 
         repositories {
             google()
@@ -95,7 +95,6 @@ val isReleaseBuild: Boolean
 
 object Library {
     const val GROUP = "com.github.submob"
-    const val VERSION = "2.0.4"
     const val URL = "https://github.com/SubMob/LogMob"
     const val NAME = "LogMob"
     const val DESCRIPTION = "Multiplatform logging library"
