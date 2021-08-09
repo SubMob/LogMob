@@ -12,7 +12,8 @@ object ProjectSettings {
     private const val MAYOR_VERSION = 2
     private const val MINOR_VERSION = 1
 
-    private const val VERSION_DIF = 91
+    // git rev-list --first-parent --count master +1
+    private const val VERSION_DIF = 92
 
     fun getVersionName(
         project: Project
