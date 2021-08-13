@@ -4,7 +4,7 @@
 
 object Versions {
     const val KOTLIN = "1.5.21"
-    const val ANDROID_GRADLE_PLUGIN = "7.1.0-alpha07"
+    const val ANDROID_GRADLE_PLUGIN = "7.1.0-alpha08"
     const val FIREBASE_CORE = "19.0.0"
     const val FIREBASE_CRASHLYTICS = "18.2.1"
     const val ANR_WATCH_DOG = "1.4.0"
