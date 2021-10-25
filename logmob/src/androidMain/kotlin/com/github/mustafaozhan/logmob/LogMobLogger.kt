@@ -25,6 +25,8 @@ actual class LogMobLogger : Logger() {
             )
         } else {
 
+            FirebaseCrashlytics.getInstance().log(message)
+
             if (severity == Severity.Verbose || severity == Severity.Debug || severity == Severity.Info) {
                 return
             }
