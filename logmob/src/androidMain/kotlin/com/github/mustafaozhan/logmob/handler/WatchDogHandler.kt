@@ -24,6 +24,6 @@ class WatchDogHandler : Thread.UncaughtExceptionHandler {
     }
 
     companion object {
-        private const val TIME_OUT = 7500
+        private const val TIME_OUT = 10000
     }
 }
