@@ -3,8 +3,8 @@
  */
 package com.github.mustafaozhan.logmob.handler
 
+import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog
-import com.github.mustafaozhan.logmob.kermit
 
 class WatchDogHandler : Thread.UncaughtExceptionHandler {
 
@@ -14,12 +14,12 @@ class WatchDogHandler : Thread.UncaughtExceptionHandler {
         ANRWatchDog(TIME_OUT)
             .setReportMainThreadOnly()
             .setANRListener { error ->
-                kermit.e(error) { "ANR DETECTED" }
+                Logger.e(error) { "ANR DETECTED" }
             }.start()
     }
 
     override fun uncaughtException(thread: Thread, exception: Throwable) {
-        kermit.e(exception) { "CRASH DETECTED on thread $thread" }
+        Logger.e(exception) { "CRASH DETECTED on thread $thread" }
         chainedHandler?.uncaughtException(thread, exception)
     }
 

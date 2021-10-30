@@ -8,5 +8,5 @@ object Versions {
     const val FIREBASE_CORE = "19.0.2"
     const val FIREBASE_CRASHLYTICS = "18.2.3"
     const val ANR_WATCH_DOG = "1.4.0"
-    const val KERMIT = "0.1.9"
+    const val KERMIT = "1.0.0-rc4"
 }

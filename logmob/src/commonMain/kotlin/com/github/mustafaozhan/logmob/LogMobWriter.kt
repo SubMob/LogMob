@@ -4,7 +4,6 @@
 
 package com.github.mustafaozhan.logmob
 
-import co.touchlab.kermit.Logger
+import co.touchlab.kermit.LogWriter
 
-@Suppress("EmptyDefaultConstructor")
-expect class LogMobLogger() : Logger
+expect class LogMobWriter() : LogWriter

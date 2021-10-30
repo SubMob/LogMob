@@ -1,10 +1,15 @@
 package com.github.mustafaozhan.logmob
 
-import co.touchlab.kermit.CommonLogger
-import co.touchlab.kermit.Kermit
+import co.touchlab.kermit.Logger
 
-lateinit var kermit: Kermit
+val kermit: Logger
+    get() = Logger
 
 fun initLogger(forTest: Boolean = false) {
-    kermit = Kermit(if (forTest) CommonLogger() else LogMobLogger())
+    if (forTest) {
+        // todo https://github.com/touchlab/Kermit/issues/184
+        // Logger.setLogWriters(getTestLogWriter())
+    } else {
+        Logger.setLogWriters(listOf(LogMobWriter()))
+    }
 }
