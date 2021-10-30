@@ -10,4 +10,4 @@ fun initLogger(
     } else {
         LogMobWriter()
     }
-)
+).let { Logger }
