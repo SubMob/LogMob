@@ -2,14 +2,12 @@ package com.github.mustafaozhan.logmob
 
 import co.touchlab.kermit.Logger
 
-val kermit: Logger
-    get() = Logger
-
-fun initLogger(forTest: Boolean = false) {
+fun initLogger(
+    forTest: Boolean = false
+) = Logger.setLogWriters(
     if (forTest) {
-        // todo https://github.com/touchlab/Kermit/issues/184
-        // Logger.setLogWriters(getTestLogWriter())
+        TestWriter()
     } else {
-        Logger.setLogWriters(listOf(LogMobWriter()))
+        LogMobWriter()
     }
-}
+)

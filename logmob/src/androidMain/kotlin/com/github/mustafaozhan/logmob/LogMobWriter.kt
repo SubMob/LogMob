@@ -5,17 +5,18 @@
 package com.github.mustafaozhan.logmob
 
 import co.touchlab.kermit.LogWriter
-import co.touchlab.kermit.Logger
 import co.touchlab.kermit.Severity
+import co.touchlab.kermit.platformLogWriter
 import com.github.mustafaozhan.logmob.error.NonThrowableException
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import mustafaozhan.github.com.logmob.BuildConfig
 
 actual class LogMobWriter : LogWriter() {
+    private val logger = platformLogWriter()
 
     override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
         if (BuildConfig.DEBUG) {
-            Logger.log(
+            logger.log(
                 severity = severity,
                 tag = tag,
                 throwable = throwable,

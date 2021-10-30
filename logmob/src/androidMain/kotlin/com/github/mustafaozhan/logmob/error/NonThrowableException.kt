@@ -3,5 +3,9 @@
  */
 package com.github.mustafaozhan.logmob.error
 
-class NonThrowableException(message: String) :
-    Exception(message, Throwable(message))
+class NonThrowableException(
+    message: String
+) : Exception(
+    message,
+    Throwable(message)
+)
