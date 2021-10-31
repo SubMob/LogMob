@@ -9,7 +9,7 @@ import co.touchlab.kermit.Severity
 import co.touchlab.kermit.platformLogWriter
 
 actual class LogMobWriter : LogWriter() {
-    var logger = platformLogWriter()
+    private var logger = platformLogWriter()
 
     override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
         logger.log(
