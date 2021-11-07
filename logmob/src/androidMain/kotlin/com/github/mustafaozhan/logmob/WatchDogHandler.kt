@@ -1,7 +1,7 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.logmob.handler
+package com.github.mustafaozhan.logmob
 
 import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog

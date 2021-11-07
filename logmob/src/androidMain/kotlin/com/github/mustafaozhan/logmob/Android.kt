@@ -5,7 +5,6 @@
 package com.github.mustafaozhan.logmob
 
 import android.content.Context
-import com.github.mustafaozhan.logmob.handler.WatchDogHandler
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import mustafaozhan.github.com.logmob.BuildConfig

@@ -7,7 +7,6 @@ package com.github.mustafaozhan.logmob
 import co.touchlab.kermit.LogWriter
 import co.touchlab.kermit.Severity
 import co.touchlab.kermit.platformLogWriter
-import com.github.mustafaozhan.logmob.error.NonThrowableException
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import mustafaozhan.github.com.logmob.BuildConfig
 
@@ -37,7 +36,7 @@ actual class LogMobWriter : LogWriter() {
                 setCustomKey(CRASHLYTICS_KEY_PRIORITY, severity.name)
                 setCustomKey(CRASHLYTICS_KEY_TAG, tag)
                 setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
-                recordException(throwable ?: NonThrowableException(message))
+                recordException(throwable ?: Exception(message))
             }
         }
     }
