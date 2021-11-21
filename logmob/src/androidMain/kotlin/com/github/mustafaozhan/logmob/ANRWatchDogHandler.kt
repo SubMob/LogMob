@@ -14,7 +14,7 @@ class ANRWatchDogHandler : Thread.UncaughtExceptionHandler {
         ANRWatchDog(TIME_OUT)
             .setReportMainThreadOnly()
             .setANRListener { error ->
-                Logger.e(error) { "ANR DETECTED" }
+                Logger.e(Exception(error.message.toString())) { "ANR DETECTED" }
             }.start()
     }
 
