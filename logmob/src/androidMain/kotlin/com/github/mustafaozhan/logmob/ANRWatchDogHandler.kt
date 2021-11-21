@@ -6,7 +6,7 @@ package com.github.mustafaozhan.logmob
 import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog
 
-class WatchDogHandler : Thread.UncaughtExceptionHandler {
+class ANRWatchDogHandler : Thread.UncaughtExceptionHandler {
 
     private val chainedHandler = Thread.getDefaultUncaughtExceptionHandler()
 
