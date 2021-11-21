@@ -11,7 +11,8 @@ import mustafaozhan.github.com.logmob.BuildConfig
 
 fun initCrashlytics(
     context: Context,
-    enableAnalytics: Boolean = false
+    enableAnalytics: Boolean = false,
+    enableAnrWatchDog: Boolean = false
 ) {
 
     if (!BuildConfig.DEBUG && enableAnalytics) {
@@ -22,5 +23,7 @@ fun initCrashlytics(
         .getInstance()
         .setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
 
-    Thread.setDefaultUncaughtExceptionHandler(WatchDogHandler())
+    if (enableAnrWatchDog) {
+        Thread.setDefaultUncaughtExceptionHandler(ANRWatchDogHandler())
+    }
 }
