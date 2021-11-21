@@ -3,7 +3,7 @@
  */
 
 plugins {
-    with(Plugins) {
+    with(Dependencies.Plugins) {
         id(ANDROID_LIB)
         kotlin(MULTIPLATFORM)
         `maven-publish`
