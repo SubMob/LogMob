@@ -5,14 +5,14 @@
 package com.github.mustafaozhan.logmob
 
 import android.content.Context
-import android.os.Build
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import mustafaozhan.github.com.logmob.BuildConfig
 
 fun initCrashlytics(
     context: Context,
-    enableAnalytics: Boolean = false
+    enableAnalytics: Boolean = false,
+    enableAnrWatchDog: Boolean = false
 ) {
 
     if (!BuildConfig.DEBUG && enableAnalytics) {
@@ -23,7 +23,7 @@ fun initCrashlytics(
         .getInstance()
         .setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
 
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+    if (enableAnrWatchDog) {
         Thread.setDefaultUncaughtExceptionHandler(ANRWatchDogHandler())
     }
 }
