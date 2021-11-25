@@ -49,7 +49,6 @@ kotlin {
             val androidMain by getting {
                 dependencies {
                     implementation(FIREBASE_CRASHLYTICS)
-                    implementation(FIREBASE_CORE)
                     implementation(ANR_WATCH_DOG)
                 }
             }
