@@ -26,14 +26,7 @@ kotlin {
         iosX64("ios")
     }
 
-    js {
-        browser {
-            binaries.executable()
-            testTask {
-                enabled = false
-            }
-        }
-    }
+    js()
 
     @Suppress("UNUSED_VARIABLE")
     sourceSets {
