@@ -7,9 +7,6 @@ import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog
 
 class ANRWatchDogHandler(timeOut: Int) : Thread.UncaughtExceptionHandler {
-
-    private val chainedHandler = Thread.getDefaultUncaughtExceptionHandler()
-
     init {
         ANRWatchDog(timeOut)
             .setReportMainThreadOnly()
@@ -20,6 +17,6 @@ class ANRWatchDogHandler(timeOut: Int) : Thread.UncaughtExceptionHandler {
 
     override fun uncaughtException(thread: Thread, exception: Throwable) {
         Logger.e(exception) { "CRASH DETECTED on thread $thread" }
-        chainedHandler?.uncaughtException(thread, exception)
+        Thread.getDefaultUncaughtExceptionHandler()?.uncaughtException(thread, exception)
     }
 }
