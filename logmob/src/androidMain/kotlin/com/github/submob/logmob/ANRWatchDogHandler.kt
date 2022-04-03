@@ -1,17 +1,14 @@
 /*
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
-package com.github.mustafaozhan.logmob
+package com.github.submob.logmob
 
 import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog
 
-class ANRWatchDogHandler : Thread.UncaughtExceptionHandler {
-
-    private val chainedHandler = Thread.getDefaultUncaughtExceptionHandler()
-
+class ANRWatchDogHandler(timeOut: Int) : Thread.UncaughtExceptionHandler {
     init {
-        ANRWatchDog(TIME_OUT)
+        ANRWatchDog(timeOut)
             .setReportMainThreadOnly()
             .setANRListener { error ->
                 Logger.e(Exception(error.message.toString())) { "ANR DETECTED" }
@@ -20,10 +17,6 @@ class ANRWatchDogHandler : Thread.UncaughtExceptionHandler {
 
     override fun uncaughtException(thread: Thread, exception: Throwable) {
         Logger.e(exception) { "CRASH DETECTED on thread $thread" }
-        chainedHandler?.uncaughtException(thread, exception)
-    }
-
-    companion object {
-        private const val TIME_OUT = 10000
+        Thread.getDefaultUncaughtExceptionHandler()?.uncaughtException(thread, exception)
     }
 }

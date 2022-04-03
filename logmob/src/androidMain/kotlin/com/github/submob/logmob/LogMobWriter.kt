@@ -2,13 +2,12 @@
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
 
-package com.github.mustafaozhan.logmob
+package com.github.submob.logmob
 
 import co.touchlab.kermit.LogWriter
 import co.touchlab.kermit.Severity
 import co.touchlab.kermit.platformLogWriter
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import mustafaozhan.github.com.logmob.BuildConfig
 
 actual class LogMobWriter : LogWriter() {
     private val logger = platformLogWriter()

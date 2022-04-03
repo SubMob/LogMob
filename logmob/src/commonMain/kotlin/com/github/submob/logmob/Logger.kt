@@ -1,4 +1,4 @@
-package com.github.mustafaozhan.logmob
+package com.github.submob.logmob
 
 import co.touchlab.kermit.Logger
 
@@ -10,4 +10,4 @@ fun initLogger(
     } else {
         LogMobWriter()
     }
-).let { Logger }
+).also { Logger.v { "Logger initialized" } }
