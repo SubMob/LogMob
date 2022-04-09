@@ -2,6 +2,7 @@ package com.github.submob.logmob
 
 import co.touchlab.kermit.Logger
 
+@Suppress("unused")
 fun initLogger(
     forTest: Boolean = false
 ) = Logger.setLogWriters(
