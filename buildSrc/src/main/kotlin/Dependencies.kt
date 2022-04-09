@@ -12,6 +12,7 @@ object Dependencies {
 
     object Common {
         const val KERMIT = "co.touchlab:kermit:${Versions.KERMIT}"
+        const val KERMIT_CRASHLYTICS = "co.touchlab:kermit-crashlytics:${Versions.KERMIT}"
     }
 
     object ClassPaths {
