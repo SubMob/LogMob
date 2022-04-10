@@ -9,5 +9,5 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 fun initCrashlytics() {
     FirebaseCrashlytics
         .getInstance()
-        .setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
+        .setCrashlyticsCollectionEnabled(true)
 }

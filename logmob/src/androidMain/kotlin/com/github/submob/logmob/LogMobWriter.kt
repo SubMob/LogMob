@@ -26,16 +26,14 @@ actual class LogMobWriter : LogWriter() {
                 "${severity.name} @${Thread.currentThread().name} $message"
             )
 
-            if (severity == Severity.Verbose || severity == Severity.Debug || severity == Severity.Info) {
-                return
-            }
 
-            FirebaseCrashlytics.getInstance().apply {
-
-                setCustomKey(CRASHLYTICS_KEY_PRIORITY, severity.name)
-                setCustomKey(CRASHLYTICS_KEY_TAG, tag)
-                setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
-                recordException(throwable ?: Exception(message))
+            if (severity == Severity.Warn || severity == Severity.Error || severity == Severity.Assert) {
+                FirebaseCrashlytics.getInstance().apply {
+                    setCustomKey(CRASHLYTICS_KEY_PRIORITY, severity.name)
+                    setCustomKey(CRASHLYTICS_KEY_TAG, tag)
+                    setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
+                    recordException(throwable ?: Exception(message))
+                }
             }
         }
     }
