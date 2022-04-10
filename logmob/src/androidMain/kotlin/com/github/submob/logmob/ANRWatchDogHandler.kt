@@ -6,9 +6,9 @@ package com.github.submob.logmob
 import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog
 
-class ANRWatchDogHandler(timeOut: Int) : Thread.UncaughtExceptionHandler {
+class ANRWatchDogHandler : Thread.UncaughtExceptionHandler {
     init {
-        ANRWatchDog(timeOut)
+        ANRWatchDog()
             .setReportMainThreadOnly()
             .setANRListener { error ->
                 Logger.e(Exception(error.message.toString())) { "ANR DETECTED" }
