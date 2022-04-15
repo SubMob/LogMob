@@ -10,10 +10,10 @@ object ProjectSettings {
     const val TARGET_SDK_VERSION = 29
 
     private const val MAYOR_VERSION = 2
-    private const val MINOR_VERSION = 1
+    private const val MINOR_VERSION = 2
 
     // git rev-list --first-parent --count master +1
-    private const val VERSION_DIF = 92
+    private const val VERSION_DIF = 101
 
     fun getVersionName(
         project: Project
