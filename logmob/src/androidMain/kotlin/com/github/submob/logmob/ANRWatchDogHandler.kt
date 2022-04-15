@@ -6,6 +6,7 @@ package com.github.submob.logmob
 import co.touchlab.kermit.Logger
 import com.github.anrwatchdog.ANRWatchDog
 
+@Suppress("unused")
 class ANRWatchDogHandler : Thread.UncaughtExceptionHandler {
     init {
         ANRWatchDog()
