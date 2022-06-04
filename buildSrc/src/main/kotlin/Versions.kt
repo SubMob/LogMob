@@ -8,4 +8,5 @@ object Versions {
     const val FIREBASE_CRASHLYTICS = "18.2.10"
     const val ANR_WATCH_DOG = "1.4.0"
     const val KERMIT = "1.1.1"
+    const val DEPENDENCY_UPDATES = "0.42.0"
 }
