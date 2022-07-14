@@ -5,6 +5,7 @@ import co.touchlab.kermit.Severity
 import co.touchlab.kermit.crashlytics.CrashlyticsLogWriter
 import co.touchlab.kermit.crashlytics.setupCrashlyticsExceptionHook
 
+@Suppress("OPT_IN_USAGE")
 fun initCrashlytics() {
     Logger.addLogWriter(
         CrashlyticsLogWriter(
