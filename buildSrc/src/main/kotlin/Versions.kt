@@ -9,4 +9,5 @@ object Versions {
     const val ANR_WATCH_DOG = "1.4.0"
     const val KERMIT = "1.1.1"
     const val DEPENDENCY_UPDATES = "0.42.0"
+    const val BUILD_HEALTH = "1.9.0"
 }
