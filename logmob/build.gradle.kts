@@ -6,10 +6,12 @@ plugins {
     with(Dependencies.Plugins) {
         id(ANDROID_LIB)
         kotlin(MULTIPLATFORM)
+        kotlin(COCOAPODS)
         `maven-publish`
         signing
     }
 }
+version = ProjectSettings.getVersionName(project)
 
 kotlin {
 
@@ -24,6 +26,16 @@ kotlin {
     iosSimulatorArm64()
 
     js()
+
+    cocoapods {
+        summary = "LogMob"
+        homepage = "https://github.com/SubMob/LogMob"
+        ios.deploymentTarget = "14.0"
+        framework {
+            baseName = "LogMob"
+            export(Dependencies.Common.KERMIT)
+        }
+    }
 
     @Suppress("UNUSED_VARIABLE")
     sourceSets {
@@ -74,6 +86,7 @@ kotlin {
     }
 }
 
+@Suppress("UnstableApiUsage")
 android {
     with(ProjectSettings) {
         compileSdk = COMPILE_SDK_VERSION
