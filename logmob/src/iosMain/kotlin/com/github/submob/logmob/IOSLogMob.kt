@@ -8,18 +8,16 @@ import co.touchlab.kermit.crashlytics.setupCrashlyticsExceptionHook
 @Suppress("OPT_IN_USAGE", "unused")
 fun initIOSLogger(
     isCrashlyticsEnabled: Boolean = false
-) = if (isCrashlyticsEnabled) {
-    initLogger(
-        listOf(
-            LogMobWriter(),
+) = initLogger().also {
+    // Setting CrashlyticsLogWriter doesn't work it has to be added later
+    if (isCrashlyticsEnabled) {
+        Logger.addLogWriter(
             CrashlyticsLogWriter(
                 minSeverity = Severity.Verbose,
                 minCrashSeverity = Severity.Warn,
                 printTag = true
             )
         )
-    )
-    setupCrashlyticsExceptionHook(Logger)
-} else {
-    initLogger()
+        setupCrashlyticsExceptionHook(Logger)
+    }
 }
