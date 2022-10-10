@@ -33,6 +33,7 @@ kotlin {
         ios.deploymentTarget = "14.0"
         framework {
             baseName = "LogMob"
+            isStatic = true
             export(Dependencies.Common.KERMIT)
         }
     }
