@@ -43,7 +43,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(Dependencies.Common.KERMIT)
-                implementation(Dependencies.Common.KERMIT_CRASHLYTICS)
             }
         }
         val commonTest by getting
@@ -62,6 +61,9 @@ kotlin {
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
+            dependencies {
+                implementation(Dependencies.Common.KERMIT_CRASHLYTICS)
+            }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
