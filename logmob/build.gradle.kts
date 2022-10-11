@@ -10,7 +10,6 @@ plugins {
         signing
     }
 }
-version = ProjectSettings.getVersionName(project)
 
 kotlin {
 
@@ -75,7 +74,6 @@ kotlin {
     }
 }
 
-@Suppress("UnstableApiUsage")
 android {
     with(ProjectSettings) {
         compileSdk = COMPILE_SDK_VERSION
