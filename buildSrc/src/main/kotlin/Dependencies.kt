@@ -26,6 +26,5 @@ object Dependencies {
         const val ANDROID_LIB = "com.android.library"
         const val MULTIPLATFORM = "multiplatform"
         const val DEPENDENCY_UPDATES = "com.github.ben-manes.versions"
-        const val BUILD_HEALTH = "com.autonomousapps.dependency-analysis"
     }
 }
