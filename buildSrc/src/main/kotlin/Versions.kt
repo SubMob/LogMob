@@ -3,7 +3,7 @@
  */
 
 object Versions {
-    const val KOTLIN = "1.7.21"
+    const val KOTLIN = "1.7.22"
     const val ANDROID_GRADLE_PLUGIN = "7.3.1"
     const val FIREBASE_CRASHLYTICS = "18.3.2"
     const val ANR_WATCH_DOG = "1.4.0"
