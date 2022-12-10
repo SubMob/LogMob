@@ -3,7 +3,7 @@ package com.github.submob.logmob
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.Severity
 import co.touchlab.kermit.crashlytics.CrashlyticsLogWriter
-import co.touchlab.kermit.crashlytics.setupCrashlyticsExceptionHook
+import co.touchlab.kermit.crashlytics.setCrashlyticsUnhandledExceptionHook
 
 @Suppress("OPT_IN_USAGE", "unused")
 fun initCrashlytics() {
@@ -14,5 +14,5 @@ fun initCrashlytics() {
             printTag = true
         )
     )
-    setupCrashlyticsExceptionHook(Logger)
+    setCrashlyticsUnhandledExceptionHook()
 }
