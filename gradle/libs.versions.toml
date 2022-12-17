@@ -1,0 +1,27 @@
+[versions]
+
+kotlin = "1.7.22"
+androidGradlePlugin = "7.3.1"
+firebaseCrashlytics = "18.3.2"
+anrWatchDog = "1.4.0"
+kermit = "1.2.2"
+dependencyUpdates = "0.44.0"
+
+[libraries]
+# COMMON
+common-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+common-kermitCrashlytics = { module = "co.touchlab:kermit-crashlytics", version.ref = "kermit" }
+
+# ANDROID
+android-firebaseCrashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "firebaseCrashlytics" }
+android-anrWatchDog = { module = "com.github.anrwatchdog:anrwatchdog", version.ref = "anrWatchDog" }
+
+# CLASSPATHS
+classpaths-androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
+classpaths-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform" }
+androidLib = { id = "com.android.library" }
+dependencyUpdates = { id = "com.github.ben-manes.versions", version.ref = "dependencyUpdates" }

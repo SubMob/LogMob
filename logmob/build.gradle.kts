@@ -3,9 +3,9 @@
  */
 
 plugins {
-    with(Dependencies.Plugins) {
-        id(ANDROID_LIB)
-        kotlin(MULTIPLATFORM)
+    with(libs.plugins) {
+        id(androidLib.get().pluginId)
+        id(multiplatform.get().pluginId)
         `maven-publish`
         signing
     }
@@ -30,27 +30,27 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                api(Dependencies.Common.KERMIT)
+                api(libs.common.kermit)
             }
         }
         val commonTest by getting
 
-        with(Dependencies.Android) {
-            val androidMain by getting {
-                dependencies {
-                    implementation(FIREBASE_CRASHLYTICS)
-                    implementation(ANR_WATCH_DOG)
+        val androidMain by getting {
+            dependencies {
+                with(libs.android) {
+                    implementation(firebaseCrashlytics)
+                    implementation(anrWatchDog)
                 }
             }
-            val androidTest by getting
         }
+        val androidTest by getting
 
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependencies {
-                implementation(Dependencies.Common.KERMIT_CRASHLYTICS)
+                implementation(libs.common.kermitCrashlytics)
             }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
