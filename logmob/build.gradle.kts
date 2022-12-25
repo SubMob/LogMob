@@ -3,6 +3,7 @@
  */
 
 plugins {
+    @Suppress("DSL_SCOPE_VIOLATION")
     with(libs.plugins) {
         id(androidLib.get().pluginId)
         id(multiplatform.get().pluginId)
