@@ -21,11 +21,9 @@ actual class LogMobWriter : LogWriter() {
                 message = "@${Thread.currentThread().name}: $message",
             )
         } else {
-
             FirebaseCrashlytics.getInstance().log(
                 "${severity.name} @${Thread.currentThread().name} $message"
             )
-
 
             if (severity == Severity.Warn || severity == Severity.Error || severity == Severity.Assert) {
                 FirebaseCrashlytics.getInstance().apply {
