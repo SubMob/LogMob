@@ -4,7 +4,7 @@
 
 plugins {
     @Suppress("DSL_SCOPE_VIOLATION")
-    with(libs.plugins) {
+    libs.plugins.apply {
         id(androidLib.get().pluginId)
         id(multiplatform.get().pluginId)
         `maven-publish`
@@ -38,7 +38,7 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                with(libs.android) {
+                libs.android.apply {
                     implementation(firebaseCrashlytics)
                     implementation(anrWatchDog)
                 }
@@ -76,7 +76,7 @@ kotlin {
 }
 
 android {
-    with(ProjectSettings) {
+    ProjectSettings.apply {
         namespace = "com.github.submob.logmob"
         compileSdk = COMPILE_SDK_VERSION
 

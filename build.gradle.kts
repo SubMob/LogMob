@@ -17,7 +17,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        with(libs.classpaths) {
+        libs.classpaths.apply {
             classpath(androidGradlePlugin)
             classpath(kotlinGradlePlugin)
         }
@@ -26,7 +26,7 @@ buildscript {
 
 allprojects {
 
-    with(Library) {
+    Library.apply {
 
         group = GROUP
         version = ProjectSettings.getVersionName(project)
