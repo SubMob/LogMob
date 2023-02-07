@@ -24,7 +24,7 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
-    js()
+    js(IR)
 
     @Suppress("UNUSED_VARIABLE")
     sourceSets {
