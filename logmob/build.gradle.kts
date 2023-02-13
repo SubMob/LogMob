@@ -76,8 +76,8 @@ kotlin {
 }
 
 android {
-    namespace = "com.github.submob.logmob"
     ProjectSettings.apply {
+        namespace = "com.github.submob.logmob"
         compileSdk = COMPILE_SDK_VERSION
         defaultConfig.minSdk = MIN_SDK_VERSION
     }
