@@ -8,9 +8,3 @@ fun initLogger() = Logger.setLogWriters(
 ).also {
     Logger.v { "Logger initialized" }
 }
-
-fun initTestLogger() = Logger.setLogWriters(
-    TestWriter()
-).also {
-    Logger.v { "Test Logger initialized" }
-}
