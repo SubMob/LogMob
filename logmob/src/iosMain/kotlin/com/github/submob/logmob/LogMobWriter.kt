@@ -10,7 +10,7 @@ import co.touchlab.kermit.platformLogWriter
 
 actual class LogMobWriter : LogWriter() {
 
-    private var logger = platformLogWriter()
+    private val logger = platformLogWriter()
 
     override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
         logger.log(
