@@ -81,5 +81,8 @@ android {
             sourceCompatibility = JAVA_VERSION
             targetCompatibility = JAVA_VERSION
         }
+
+        @Suppress("UnstableApiUsage")
+        buildFeatures.buildConfig = true
     }
 }
