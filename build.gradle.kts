@@ -91,6 +91,12 @@ allprojects {
             }
         }
     }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            allWarningsAsErrors = true
+        }
+    }
 }
 
 val isReleaseBuild: Boolean
