@@ -16,7 +16,7 @@ kotlin {
 
     jvm()
 
-    android {
+    androidTarget {
         publishLibraryVariants("release", "debug")
     }
 
