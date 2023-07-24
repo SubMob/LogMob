@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.IOException
 import java.util.Properties
 
@@ -92,12 +93,11 @@ allprojects {
         }
     }
 
-// todo enable back post Kotlin 1.9.0
-//    tasks.withType<KotlinCompile> {
-//        kotlinOptions {
-//            allWarningsAsErrors = true
-//        }
-//    }
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            allWarningsAsErrors = true
+        }
+    }
 }
 
 val isReleaseBuild: Boolean
