@@ -7,6 +7,7 @@ import java.util.Properties
 
 plugins {
     `maven-publish`
+    alias(libs.plugins.kotlinMultiplatform).apply(false)
 }
 
 buildscript {
