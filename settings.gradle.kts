@@ -4,3 +4,10 @@
 
 rootProject.name = "LogMob"
 include(":logmob")
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}

@@ -7,7 +7,10 @@ import java.util.Properties
 
 plugins {
     `maven-publish`
-    alias(libs.plugins.kotlinMultiplatform).apply(false)
+    libs.plugins.apply {
+        alias(kotlinMultiplatform).apply(false)
+        alias(androidLibrary).apply(false)
+    }
 }
 
 buildscript {
