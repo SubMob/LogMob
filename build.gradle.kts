@@ -20,7 +20,6 @@ buildscript {
     }
     dependencies {
         libs.classpaths.apply {
-            classpath(androidGradlePlugin)
             classpath(kotlinGradlePlugin)
         }
     }
