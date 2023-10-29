@@ -2,7 +2,7 @@
 
 kotlin = "1.9.10"
 androidGradlePlugin = "8.1.2"
-firebaseCrashlytics = "18.5.0"
+firebaseCrashlytics = "18.5.1"
 anrWatchDog = "1.4.0"
 kermit = "2.0.2"
 
