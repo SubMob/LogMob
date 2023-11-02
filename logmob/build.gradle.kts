@@ -12,9 +12,6 @@ plugins {
 }
 
 kotlin {
-    @Suppress("OPT_IN_USAGE")
-    targetHierarchy.default()
-
     jvm()
 
     androidTarget {
@@ -25,25 +22,20 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
-    @Suppress("UNUSED_VARIABLE")
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.common.kermit)
+        commonMain.dependencies {
+            implementation(libs.common.kermit)
+        }
+
+        androidMain.dependencies {
+            libs.android.apply {
+                implementation(firebaseCrashlytics)
+                implementation(anrWatchDog)
             }
         }
-        val androidMain by getting {
-            dependencies {
-                libs.android.apply {
-                    implementation(firebaseCrashlytics)
-                    implementation(anrWatchDog)
-                }
-            }
-        }
-        val iosMain by getting {
-            dependencies {
-                implementation(libs.common.kermitCrashlytics)
-            }
+
+        iosMain.dependencies {
+            implementation(libs.common.kermitCrashlytics)
         }
     }
 }
