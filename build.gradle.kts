@@ -86,6 +86,7 @@ allprojects {
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
+            freeCompilerArgs += "-Xexpect-actual-classes"
             allWarningsAsErrors = true
         }
     }
