@@ -12,12 +12,12 @@ Example:
 
 ## Commit Message
 
-Every commit message should match the following format `[/#ISSUE_ID] Commit message`
+Every commit message should match the following format `[SubMob/LogMob#ISSUE_ID] Commit message`
 
 Example:
 
 ```
-[/#ISSUE_ID] My cool feature
+[SubMob/LogMob#ISSUE_ID] My cool feature
 ```
 
 ## Pull Request
@@ -27,23 +27,23 @@ Example:
 Pull Request title should follow below format:
 
 ```
-[/#ISSUE_ID] ISSUE_TITLE
+[SubMob/LogMob#ISSUE_ID] ISSUE_TITLE
 ```
 
 Example:
 
 ```
-[/#ISSUE_ID] Whatever the name of ticket is
+[SubMob/LogMob#ISSUE_ID] Whatever the name of ticket is
 ```
 
 ### Description
 
-Description has to have `Resolves /#ISSUE_ID` with relevant issue. It will help automatically close relevant issue once the PR is merged.
+Description has to have `Resolves SubMob/LogMob#ISSUE_ID` with relevant issue. It will help automatically close relevant issue once the PR is merged.
 
 Example:
 
 ```
-Resolves /#123
+Resolves SubMob/LogMob#123
 
 Some description.
 ```
