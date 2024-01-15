@@ -2,9 +2,6 @@
  Copyright (c) 2020 Mustafa Ozhan. All rights reserved.
  */
 
-rootProject.name = "LogMob"
-include(":logmob")
-
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -27,5 +24,23 @@ gradleEnterprise {
             hostname { null }
             ipAddresses { null }
         }
+    }
+}
+
+include(":logmob")
+
+rootProject.name = "LogMob"
+rootProject.updateBuildFileNames()
+
+fun ProjectDescriptor.updateBuildFileNames() {
+    buildFileName = path
+        .drop(1)
+        .replace(":", "-")
+        .dropLastWhile { it != '-' }
+        .plus(name)
+        .plus(".gradle.kts")
+
+    if (children.isNotEmpty()) {
+        children.forEach { it.updateBuildFileNames() }
     }
 }
