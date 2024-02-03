@@ -4,7 +4,7 @@ kotlin = "1.9.22"
 androidGradlePlugin = "8.2.2"
 firebaseCrashlytics = "18.6.0"
 anrWatchDog = "1.4.0"
-kermit = "2.0.2"
+kermit = "2.0.3"
 
 [libraries]
 # COMMON
