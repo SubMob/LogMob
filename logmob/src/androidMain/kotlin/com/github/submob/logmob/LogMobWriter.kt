@@ -25,7 +25,7 @@ actual class LogMobWriter : LogWriter() {
                 "${severity.name} @${Thread.currentThread().name} $message"
             )
 
-            if (severity == Severity.Error || severity == Severity.Assert) {
+            if (severity == Severity.Error) {
                 FirebaseCrashlytics.getInstance().apply {
                     setCustomKey(CRASHLYTICS_KEY_PRIORITY, severity.name)
                     setCustomKey(CRASHLYTICS_KEY_TAG, tag)
