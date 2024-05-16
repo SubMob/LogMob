@@ -30,7 +30,12 @@ actual class LogMobWriter : LogWriter() {
                     setCustomKey(CRASHLYTICS_KEY_PRIORITY, severity.name)
                     setCustomKey(CRASHLYTICS_KEY_TAG, tag)
                     setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
-                    recordException(throwable ?: Exception(message))
+                    recordException(
+                        throwable ?: Exception(message).also {
+                            // To ensure that the Exceptions are not merged into single instance in long term
+                            recordException(Exception("No throwable provided for error message: $message"))
+                        }
+                    )
                 }
             }
         }
