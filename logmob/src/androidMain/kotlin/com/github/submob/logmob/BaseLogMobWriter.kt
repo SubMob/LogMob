@@ -9,10 +9,10 @@ import co.touchlab.kermit.Severity
 import co.touchlab.kermit.platformLogWriter
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
-actual class LogMobWriter : LogWriter() {
+actual abstract class BaseLogMobWriter : LogWriter() {
     private val logger = platformLogWriter()
 
-    override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
+    actual override fun log(severity: Severity, message: String, tag: String, throwable: Throwable?) {
         if (BuildConfig.DEBUG) {
             logger.log(
                 severity = severity,
