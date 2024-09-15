@@ -6,8 +6,8 @@ package com.github.submob.logmob
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
-fun setCrashlyticsCollection(shouldEnable: Boolean) {
+fun enableCrashlyticsCollection() {
     FirebaseCrashlytics
         .getInstance()
-        .setCrashlyticsCollectionEnabled(shouldEnable)
+        .setCrashlyticsCollectionEnabled(true)
 }
