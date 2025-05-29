@@ -1,6 +1,6 @@
 [versions]
 
-kotlin = "2.1.20"
+kotlin = "2.1.21"
 androidGradlePlugin = "8.10.1"
 firebaseCrashlytics = "19.4.2"
 anrWatchDog = "1.4.0"
