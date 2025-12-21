@@ -14,6 +14,7 @@ plugins {
 kotlin {
     jvm()
 
+    @Suppress("Deprecation")
     androidTarget {
         publishLibraryVariants("release", "debug")
     }
