@@ -2,7 +2,7 @@
 
 kotlin = "2.3.0"
 androidGradlePlugin = "8.13.2"
-firebaseCrashlytics = "19.4.4"
+firebaseBom = "34.11.0"
 anrWatchDog = "1.4.0"
 kermit = "2.0.8"
 
@@ -12,7 +12,8 @@ common-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 common-kermitCrashlytics = { module = "co.touchlab:kermit-crashlytics", version.ref = "kermit" }
 
 # ANDROID
-android-firebaseCrashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "firebaseCrashlytics" }
+android-firebaseBom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+android-firebaseCrashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 android-anrWatchDog = { module = "com.github.anrwatchdog:anrwatchdog", version.ref = "anrWatchDog" }
 
 [plugins]

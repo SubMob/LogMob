@@ -30,6 +30,7 @@ kotlin {
 
         androidMain.dependencies {
             libs.android.apply {
+                implementation(project.dependencies.platform(firebaseBom))
                 implementation(firebaseCrashlytics)
                 implementation(anrWatchDog)
             }
