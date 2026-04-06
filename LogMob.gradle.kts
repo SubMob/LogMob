@@ -9,7 +9,7 @@ plugins {
     `maven-publish`
     libs.plugins.apply {
         alias(kotlinMultiplatform).apply(false)
-        alias(androidLibrary).apply(false)
+        alias(androidKotlinMultiplatformLibrary).apply(false)
     }
 }
 

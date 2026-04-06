@@ -4,7 +4,7 @@
 
 plugins {
     libs.plugins.apply {
-        alias(androidLibrary)
+        alias(androidKotlinMultiplatformLibrary)
         alias(kotlinMultiplatform)
         `maven-publish`
         signing
@@ -12,12 +12,12 @@ plugins {
 }
 
 kotlin {
-    jvm()
-
-    @Suppress("Deprecation")
-    androidTarget {
-        publishLibraryVariants("release", "debug")
+    androidLibrary {
+        namespace = "com.github.submob.logmob"
+        compileSdk = ProjectSettings.COMPILE_SDK_VERSION
     }
+
+    jvm()
 
     iosX64()
     iosArm64()
@@ -39,19 +39,5 @@ kotlin {
         iosMain.dependencies {
             implementation(libs.common.kermitCrashlytics)
         }
-    }
-}
-
-android {
-    ProjectSettings.apply {
-        namespace = "com.github.submob.logmob"
-        compileSdk = COMPILE_SDK_VERSION
-
-        compileOptions {
-            sourceCompatibility = JAVA_VERSION
-            targetCompatibility = JAVA_VERSION
-        }
-
-        buildFeatures.buildConfig = true
     }
 }

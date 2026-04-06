@@ -1,7 +1,7 @@
 [versions]
 
 kotlin = "2.3.10"
-androidGradlePlugin = "8.13.2"
+androidGradlePlugin = "9.0.1"
 firebaseBom = "34.11.0"
 anrWatchDog = "1.4.0"
 kermit = "2.0.8"
@@ -19,4 +19,4 @@ android-anrWatchDog = { module = "com.github.anrwatchdog:anrwatchdog", version.r
 [plugins]
 
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+androidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "androidGradlePlugin" }
