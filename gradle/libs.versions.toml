@@ -1,6 +1,6 @@
 [versions]
 
-kotlin = "2.3.0"
+kotlin = "2.3.10"
 androidGradlePlugin = "8.13.2"
 firebaseBom = "34.11.0"
 anrWatchDog = "1.4.0"
