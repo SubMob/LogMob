@@ -4,7 +4,7 @@ kotlin = "2.3.10"
 androidGradlePlugin = "9.0.1"
 firebaseBom = "34.11.0"
 anrWatchDog = "1.4.0"
-kermit = "2.0.8"
+kermit = "2.1.0"
 
 [libraries]
 # COMMON
