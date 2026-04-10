@@ -12,7 +12,7 @@ plugins {
 }
 
 kotlin {
-    androidLibrary {
+    android {
         namespace = "com.github.submob.logmob"
         compileSdk = ProjectSettings.COMPILE_SDK_VERSION
     }
