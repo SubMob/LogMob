@@ -5,7 +5,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 
 object ProjectSettings {
-    const val COMPILE_SDK_VERSION = 34
+    const val COMPILE_SDK_VERSION = 36
 
     private const val MAYOR_VERSION = 2
     private const val MINOR_VERSION = 2
