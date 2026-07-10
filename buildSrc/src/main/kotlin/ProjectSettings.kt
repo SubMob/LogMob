@@ -7,11 +7,11 @@ import org.gradle.api.Project
 object ProjectSettings {
     const val COMPILE_SDK_VERSION = 36
 
-    private const val MAYOR_VERSION = 2
-    private const val MINOR_VERSION = 2
+    private const val MAYOR_VERSION = 3
+    private const val MINOR_VERSION = 0
 
-    // git rev-list --first-parent --count master +1
-    private const val VERSION_DIF = 101
+    // git rev-list --first-parent --count master (recalibrated at the 3.0 major bump)
+    private const val VERSION_DIF = 104
 
     val JAVA_VERSION = JavaVersion.VERSION_21
 
