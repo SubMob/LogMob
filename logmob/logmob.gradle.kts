@@ -6,8 +6,7 @@ plugins {
     libs.plugins.apply {
         alias(androidKotlinMultiplatformLibrary)
         alias(kotlinMultiplatform)
-        `maven-publish`
-        signing
+        alias(mavenPublish)
     }
 }
 
@@ -40,4 +39,10 @@ kotlin {
             implementation(libs.common.kermitCrashlytics)
         }
     }
+}
+
+mavenPublishing {
+    // Coordinates (GROUP + POM_ARTIFACT_ID), POM, host and auto-release come from gradle.properties.
+    // Central Portal requires signed artifacts; keys are provided in CI via ORG_GRADLE_PROJECT_* env.
+    signAllPublications()
 }
