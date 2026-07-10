@@ -5,6 +5,7 @@ androidGradlePlugin = "9.2.1"
 firebaseBom = "34.16.0"
 anrWatchDog = "1.4.0"
 kermit = "2.1.0"
+mavenPublish = "0.37.0"
 
 [libraries]
 # COMMON
@@ -20,3 +21,4 @@ android-anrWatchDog = { module = "com.github.anrwatchdog:anrwatchdog", version.r
 
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 androidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "androidGradlePlugin" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
